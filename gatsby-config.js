@@ -52,4 +52,5 @@ module.exports = {
     //   },
     // },
   ],
+  pathPrefix: "/__Portfolio",
 }
