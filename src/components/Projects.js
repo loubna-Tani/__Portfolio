@@ -3,8 +3,8 @@ import Title from "./Title"
 import Project from "./Project"
 import { Link } from "gatsby"
 
-const Projects = () => {
-  return <h2>projects list</h2>
+const Projects = ({ projects, title, showLink }) => {
+  return <section className="section projects"></section>
 }
 
 export default Projects
