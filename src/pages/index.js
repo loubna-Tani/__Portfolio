@@ -16,15 +16,14 @@ export default ({ data }) => {
       <Hero />
       <Services />
       <Jobs />
-      <Projects projects={projects} title="featured projects" showLink />
+      <Projects project={projects} title="featured projects" showLink />
     </Layout>
   )
 }
 export const query = graphql`
   {
-    allStrapiProjects(filter: { featrued: { eq: true } }) {
+    allStrapiProjects {
       nodes {
-        github
         id
         description
         title
@@ -38,7 +37,7 @@ export const query = graphql`
         }
         stack {
           id
-          title
+          name
         }
       }
     }

@@ -9,7 +9,7 @@ const query = graphql`
     allStrapiJobs(sort: { fields: strapiId, order: DESC }) {
       nodes {
         strapiId
-        Company
+        company
         date
         position
         desc {
@@ -26,7 +26,7 @@ const Jobs = () => {
     allStrapiJobs: { nodes: jobs },
   } = data
   const [value, setValue] = React.useState(0)
-  const { Company, position, date, desc } = jobs[value]
+  const { company, position, date, desc } = jobs[value]
   return (
     <section className="section jobs">
       <Title title="expierience" />
@@ -39,14 +39,14 @@ const Jobs = () => {
                 onClick={() => setValue(index)}
                 className={`job-btn ${index === value && "active-btn"}`}
               >
-                {item.Company}
+                {item.company}
               </button>
             )
           })}
         </div>
         <article className="job-info">
           <h3>{position}</h3>
-          <h4>{Company} Digital Experience</h4>
+          <h4>{company} Digital Experience</h4>
           <p className="job-date">{date}</p>
           {desc.map(item => {
             return (
@@ -58,6 +58,9 @@ const Jobs = () => {
           })}
         </article>
       </div>
+      <Link to="/about" className="btn center-btn">
+        mor Info
+      </Link>
     </section>
   )
 }
